@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="moviegestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="movie_dataset_fixed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="index" Type="int" />
+          <Property Name="budget" Type="bigint" />
+          <Property Name="genres" Type="varchar" MaxLength="8000" />
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="keywords" Type="varchar" MaxLength="8000" />
+          <Property Name="original_language" Type="varchar" MaxLength="8000" />
+          <Property Name="original_title" Type="varchar" MaxLength="8000" />
+          <Property Name="overview" Type="varchar" MaxLength="8000" />
+          <Property Name="popularity" Type="float" />
+          <Property Name="release_date" Type="date" />
+          <Property Name="runtime" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="8000" />
+          <Property Name="tagline" Type="varchar" MaxLength="8000" />
+          <Property Name="title" Type="varchar" MaxLength="8000" />
+          <Property Name="vote_average" Type="float" />
+          <Property Name="vote_count" Type="int" />
+          <Property Name="cast" Type="varchar" MaxLength="8000" />
+          <Property Name="director" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityContainer Name="moviegestDBModelStoreContainer">
+          <EntitySet Name="movie_dataset_fixed" EntityType="Self.movie_dataset_fixed" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="moviegestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="movie_dataset_fixed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="index" Type="Int32" />
+          <Property Name="budget" Type="Int64" />
+          <Property Name="genres" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="keywords" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="original_language" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="original_title" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="overview" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="popularity" Type="Double" />
+          <Property Name="release_date" Type="DateTime" Precision="0" />
+          <Property Name="runtime" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="tagline" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="title" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="vote_average" Type="Double" />
+          <Property Name="vote_count" Type="Int32" />
+          <Property Name="cast" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="director" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="moviegestDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="movie_dataset_fixed" EntityType="Self.movie_dataset_fixed" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="moviegestDBModelStoreContainer" CdmEntityContainer="moviegestDBEntities1">
+          <EntitySetMapping Name="movie_dataset_fixed">
+            <EntityTypeMapping TypeName="moviegestDBModel.movie_dataset_fixed">
+              <MappingFragment StoreEntitySet="movie_dataset_fixed">
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="budget" ColumnName="budget" />
+                <ScalarProperty Name="genres" ColumnName="genres" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="keywords" ColumnName="keywords" />
+                <ScalarProperty Name="original_language" ColumnName="original_language" />
+                <ScalarProperty Name="original_title" ColumnName="original_title" />
+                <ScalarProperty Name="overview" ColumnName="overview" />
+                <ScalarProperty Name="popularity" ColumnName="popularity" />
+                <ScalarProperty Name="release_date" ColumnName="release_date" />
+                <ScalarProperty Name="runtime" ColumnName="runtime" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="tagline" ColumnName="tagline" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="vote_average" ColumnName="vote_average" />
+                <ScalarProperty Name="vote_count" ColumnName="vote_count" />
+                <ScalarProperty Name="cast" ColumnName="cast" />
+                <ScalarProperty Name="director" ColumnName="director" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
